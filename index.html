@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+    <body>
+    <div id="parent">
+        <input type = "text" id="text1"/>
+         <button id = "button1">BUTTON</button>
+
+    </div>
+    <script>
+        console.log('Hello console!-line 13');
+
+        const parentElement = document.getElementById('parent');
+        const inputElement = document.getElementById('text1');
+        const buttonElement = document.getElementById('button1');
+        //Every time you change the input and click the button it will print out the code
+        inputElement.addEventListener('change',function(e){
+            console.log(`The value you entered  is ${e.target.value}`)
+        })
+        // This will print as long as you change it to something else
+        inputElement.addEventListener('input',function(e){
+            console.log(`The value you entered is ${e.target.value}`);
+        })
+        // Every time you focus or click on the input it prints this out
+        inputElement.addEventListener('focus', function (e){
+            console.log(`You focused on input`);
+        })
+        // If you clicked out of the input you are no longer focus so this is print out
+        inputElement.addEventListener('blur', function (e){
+            console.log(`You stopped focusing on input`);
+        })
+        // If you click the button this code will know and print out you clicked on it
+        buttonElement.addEventListener('click',function(e){
+            console.log(`You clicked on my button`);
+            // Now you will on;y get you clicked on button and not the parent div.
+            e.stopPropagation();
+        })
+        // If your mouse over the button this code will print
+        buttonElement.addEventListener('mouseover',function (e){
+            console.log(` your mouse is on the button`);
+        })
+        // If you move your mouse this will print
+        buttonElement.addEventListener('mouseout',function (e){
+            console.log(` your mouse is no longer on the button`);
+        })
+        // If you click anything in the parent div it will print out this code
+        parentElement.addEventListener('click',function (e){
+            console.log(`You clicked on the parent containing div.`);
+        })
+        // This tells you every key you pressed and how many times you pressed
+        document.addEventListener('keydown', function(e){
+            console.log(e)
+            console.log(`You just hit the ${e.key} key`);
+        })
+
+
+    </script>
+
+</body>
+</html>
