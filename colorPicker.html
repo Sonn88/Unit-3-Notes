@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link  rel="stylesheet" href="style.css" >
+    <style>
+    .red{
+        background-color:#CE5252;
+    }
+    .green{
+        background-color:#196920;
+    }
+    .blue{
+        background-color:#224160;
+    }
+
+    .pink{
+        color:#F5AEC5;
+    }
+    .teal{
+        color: #2596be;
+    }
+    .purple{
+        color:#d9afe7;
+    }
+
+    .gray{
+     background-color: #909494;
+    }
+    .Wisteria{
+     background-color: #9473B7;
+    }
+    .maroon{
+    background-color: #7f0202;
+    }
+
+    .graygreen{
+        color:#8EA091
+    }
+    .gold{
+        color:#DAD3A0
+    }
+    .grayblue{
+        color:#9FA7C1
+
+    }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus pretium quam vulputate dignissim suspendisse in est ante in. Vivamus arcu felis bibendum ut tristique. Nibh venenatis cras sed felis eget velit aliquet sagittis. Aliquet enim tortor at auctor urna nunc id cursus metus. Rhoncus aenean vel elit scelerisque mauris pellentesque. Vitae suscipit tellus mauris a diam. Bibendum ut tristique et egestas. Viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Ut pharetra sit amet aliquam id. Et tortor consequat id porta nibh venenatis cras. Amet nisl suscipit adipiscing bibendum est ultricies integer quis. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Laoreet sit amet cursus sit amet dictum. Semper viverra nam libero justo laoreet sit. Adipiscing tristique risus nec feugiat in fermentum posuere. Accumsan lacus vel facilisis volutpat est velit egestas.
+            <br>
+            <br>
+            Vel eros donec ac odio tempor orci dapibus. Turpis egestas sed tempus urna et. Bibendum est ultricies integer quis auctor elit. Risus quis varius quam quisque id diam vel. Ante metus dictum at tempor commodo ullamcorper a lacus. Amet aliquam id diam maecenas ultricies mi eget. In tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Suscipit tellus mauris a diam. Rhoncus aenean vel elit scelerisque mauris. Consequat nisl vel pretium lectus quam id leo in vitae. Imperdiet dui accumsan sit amet nulla. Facilisis sed odio morbi quis commodo odio. Amet commodo nulla facilisi nullam vehicula ipsum a. Iaculis at erat pellentesque adipiscing commodo elit at. Sit amet facilisis magna etiam tempor.</p>
+        <div class="row">
+            <h3>Background</h3>
+            <button id="1">RED</button>
+            <button id="2">GREEN</button>
+            <button id="3">BLUE</button>
+            <button id="gray">GRAY</button>
+            <button id="purple">PURPLE</button>
+            <button id="maroon">MAROON</button>
+        </div>
+        <div class="row">
+            <h3>Text</h3>
+            <button id="4">Pink</button>
+            <button id="5">Teal</button>
+            <button id="6">Purple Pink</button>
+            <button id="graygreen">Gray Green</button>
+            <button id="gold">GOLD</button>
+            <button id="grayblue">Gray Blue  </button>
+        </div>
+        <button id="clear">CLEAR</button>
+    </div>
+</div>
+<script>
+
+    const content = document.querySelector('.content');
+    const red = document.getElementById('1');
+    const green = document.getElementById('2');
+    const blue = document.getElementById('3');
+    const gray = document.getElementById('gray')
+    const wisteria = document.getElementById('purple');
+    const maroon = document.getElementById('maroon');
+    
+
+    const pink = document.getElementById('4');
+    const teal = document.getElementById('5');
+    const purple = document.getElementById('6')
+    const graygreen = document.getElementById('graygreen');
+    const gold = document.getElementById('gold');
+    const grayblue = document.getElementById('grayblue');
+
+    const clear = document.getElementById('clear');
+    red.addEventListener('click', function(e) {
+        removeBGColor();
+        content.classList.add('red');
+    });
+    green.addEventListener('click', function(e) {
+        removeBGColor();
+        content.classList.add('green');
+    });
+    blue.addEventListener('click', function(e) {
+        removeBGColor();
+        content.classList.add('blue');
+    });
+    gray.addEventListener('click',function (e){
+        removeBGColor();
+        content.classList.add('gray')
+    })
+    wisteria.addEventListener('click', function (e){
+        removeBGColor();
+        content.classList.add('Wisteria');
+    })
+    maroon.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('maroon')
+    })
+
+    pink.addEventListener('click' , function(e){
+        removeTextColor();
+        content.classList.add('pink');
+    })
+    teal.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('teal');
+    })
+    purple.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('purple')
+    })
+    graygreen.addEventListener('click', function(e){
+        removeTextColor()
+        content.classList.add('graygreen')
+    })
+    grayblue.addEventListener('click', function(e){
+        removeTextColor()
+        content.classList.add('grayblue')
+    })
+    gold.addEventListener('click', function(e){
+        removeTextColor()
+        content.classList.add('gold')
+    })
+
+
+
+    function removeTextColor(){
+        content.classList.remove('pink');
+        content.classList.remove('teal');
+        content.classList.remove('purple');
+        content.classList.remove('graygreen');
+        content.classList.remove('gold');
+        content.classList.remove('grayblue');
+    }
+    function removeBGColor(){
+        content.classList.remove('red');
+        content.classList.remove('green');
+        content.classList.remove('blue');
+        content.classList.remove('gray');
+        content.classList.remove('Wisteria');
+        content.classList.remove('maroon')
+    }
+    clear.addEventListener('click', function (e){
+        removeBGColor();
+        removeTextColor();
+    })
+
+</script>
+
+</body>
+</html>
